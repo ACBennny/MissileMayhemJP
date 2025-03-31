@@ -19,7 +19,7 @@ Player spawn locations can be set and are marked by the color codes. However, th
 ## Game Description
 Title: Missle Mayhem
 
-Author: Anyanwu Benedict Chukwuemeka
+Author: Anyanwu Benedict Chukwuemeka (https://github.com/ACBennny)
 
 Minor Contributors(Initial game concept generation): Fady Elgohary, Kidus Gashaw
 
