@@ -21,7 +21,7 @@ Title: Missle Mayhem
 
 Author: Anyanwu Benedict Chukwuemeka (https://github.com/ACBennny)
 
-Minor Contributors(Initial game concept generation): Fady Elgohary, Kidus Gashaw
+Minor Contributors(initial game idea): Fady Elgohary, Kidus Gashaw
 
 Version: 1
 
