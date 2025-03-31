@@ -1,0 +1,63 @@
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+-------------------------------------------------------------------------
+|Players[4]  	Location|						|
+|-----------------------|						|
+|			|						|
+|Player1	notSet	|						|
+|			|						|
+|Player2	notSet	|						|
+|			|						|
+|Player3	notSet	|		MAP (TO BE DRAWN LATER)		|
+|			|						|
+|Player4	notSet	|						|
+|			|						|
+|Player5	notSet	|						|
+|			|						|
+|			|						|
+|-----------------------|						|
+|			|						|
+|AddPlyr      RemovePlyr|						|
+|			|						|
+|Start Rnd      End Game|						|
+-------------------------------------------------------------------------
+
+
+
+
+Part 3 : Instantiate game interface
+A new method called "instantiateGameInterface" will be called to create instantiate the game interface. 
+
+We think that the structure (sketched below) would be constructed in the "Struct" file as the main dynamic change right now is the player's name. the player's name 
+
+This is a rough sketch of the game interface:
+-------------------------------------------------------------------------
+|Players[4]  	   Location|						                                                        |
+|---------------------------|						                                                        |
+|Player1	              notSet|						                                                        |
+|Player2	              notSet|						                                                        |
+|Player3	              notSet|		MAP (TO BE DRAWN LATER)		    |
+|Player4	              notSet|						                                                        |
+|Player5	              notSet|						                                                        |
+|		   player section        |						                                                        |
+|---------------------------|						                                                        |
+|		                                         |						                                                        |					                                                        
+|AddPlyr      RemovePlyr|						                                                        |					                                                        
+|Start Rnd      End Game|						                                                        |
+-------------------------------------------------------------------------
+
+Can you design the structure to look like this, you can leave the styling to us
+
+Please

@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=PlayerNoRangeException
+comment0.text=\r\n\ Missle\ Mayhem\ is\ a\ simple\ 2D\ game\ that\ has\ been\ adapted\ for\ the\ streaming\ world.\ \r\n\ The\ players\ need\ to\ survive\ missiles\ strikes\ on\ random\ locations\ on\ the\ map.\ \r\n\ The\ last\ surviving\ player\ or\ popularly\ known\ as\ the\ last\ man\ standing\ is\ the\ winner\ and\ gets\ VBucks\ as\ a\ reward\ \r\n\ If\ the\ player,\ wins\ and\ Victory\ Crown\ the\ prize\ is\ 1500\ VBucks,\ if\ just\ win\ then\ it's\ 750\ VBucks\r\n\ \r\n\ \ This\ class\ is\ a\ custom\ built\ exception\ class\ which\ is\ called\ to\ the\ condition\:\ "Players\ selected\ must\ be\ between\ 2\ and\ 11"\r\n\r\n\ @author\ (Anyanwu\ Benedict\ Chukwuemeka\ |\ 3753658,\ Fady\ Elgohary\ |\ 3762991,\ Kidus\ Gashaw\ |\ 3767966)\r\n\ @version\ (v1)\r\n
+comment1.params=
+comment1.target=PlayerNoRangeException()
+comment2.params=message
+comment2.target=PlayerNoRangeException(java.lang.String)
+numComments=3

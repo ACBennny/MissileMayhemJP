@@ -1,0 +1,173 @@
+<!--  ====================================================================================================================================================
+    Missle Mayhem is a simple 2D game that has been adapted for the streaming world. 
+    The players need to survive missiles strikes on random locations on the map. 
+    The last surviving player or popularly known as the last man standing is the winner and gets VBucks as a reward 
+    If the player, wins and Victory Crown the prize is 1500 VBucks, if just win then it's 750 VBucks
+
+    ============================================================>   Struct  < =====================================================================
+ 
+  @author (Anyanwu Benedict Chukwuemeka | 3753658, Fady Elgohary | 3762991, Kidus Gashaw | 3767966)
+  @version (v1)
+ ======================================================================================================================================================== -->
+
+
+<!-- Import lines -->
+<!-- <?xml version="1.0" encoding="UTF-8"?> -->
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.media.MediaView?>
+<?import javafx.scene.control.TextField?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="MissleMayhemJP.Control"
+            styleClass="startscreen">
+
+    <!-- Video Background -->
+    <MediaView fx:id="startScreenMediaView" fitWidth="1600" fitHeight="900" preserveRatio="false"/>
+
+
+
+    <!-- Welcome VBox -->
+    <VBox fx:id="welcomeBox" styleClass="WelcomeBox" AnchorPane.topAnchor="350" AnchorPane.leftAnchor="400" AnchorPane.rightAnchor="400">
+        <!-- Welcome Text -->
+        <Label text="MISSILE MAYHEM" styleClass="welcome_text"/>
+
+        <!-- Start Game Button -->
+        <Button text="Start Game" fx:id="startGameBtn" styleClass="genButton" onAction="#welcomeGame"/>
+    </VBox>
+
+
+
+    <!-- Player Selection-->
+    <VBox fx:id="playerSelectionBox" styleClass="playerSelectionBox" AnchorPane.topAnchor="300" AnchorPane.leftAnchor="400" AnchorPane.rightAnchor="400">
+        <!--  -->
+        <Label styleClass="playerSelectionText" text="Select Number of Players"/>
+        <TextField fx:id="numberOfPlayersField" styleClass="genTextField"  promptText="Enter number of players"/>
+        <Label fx:id="noOfPlayerWarning" styleClass="noOfPlayerWarning" text="" />
+        <Button text="Continue" fx:id="submitButton" styleClass="genButton" onAction="#submitNumberOfPlayers"/>
+    </VBox>
+
+
+
+
+    <!-- Player Names Request VBox -->
+    <VBox fx:id="playerNamesRequestBox" styleClass="playerNamesRequestBox" AnchorPane.topAnchor="350" AnchorPane.leftAnchor="400" AnchorPane.rightAnchor="400" visible="false">
+        <!-- Player Names Request Label -->
+        <Label styleClass="playerNamesRequestText" text="Do you want custom player names or default names?"/>
+        <!-- Player Names Request HBox for buttons -->
+        <HBox styleClass="playerNamesRequestButtons">
+            <!-- No Button -->
+            <Button text="Go back" fx:id="backToPLNoButton" styleClass="genButton" onAction="#goBackToSelectNoOfPL" />
+            <!-- Yes Button -->
+            <Button text="Custom" fx:id="yesButton" styleClass="genButton" onAction="#useCustomNames" />
+            <!-- No Button -->
+            <Button text="Default" fx:id="noButton" styleClass="genButton" onAction="#useDefaultNames" />
+        </HBox>
+    </VBox>
+
+    <VBox fx:id="playerNameSettingsBox" styleClass="playerNameSettingsBox" AnchorPane.topAnchor="0" AnchorPane.leftAnchor="400" AnchorPane.rightAnchor="400">
+        <!-- The content of playerNameSettingsBox will be populated dynamically -->
+    </VBox>
+
+
+
+
+
+    <!-- Game Interface -->
+    <AnchorPane fx:id="gameInterfaceBox" styleClass="gameInterfaceBox">
+
+        <!-- Navigation Panel -->
+        <VBox styleClass="Nav_panel" AnchorPane.topAnchor="0" AnchorPane.leftAnchor="0">
+
+            <!-- Leaderboard -->
+            <VBox styleClass="LeaderBoard_box">
+
+                <!-- Title -->
+                <AnchorPane styleClass="section_title_box">
+
+                    <!-- Player Title -->
+                    <HBox styleClass="section_title" AnchorPane.topAnchor="0" AnchorPane.leftAnchor="0">
+                        <Label text="Players" styleClass="section_title_text" />
+                        <Label text="[null]" fx:id="playersLeft" styleClass="section_title_text" />
+                    </HBox>
+
+                    <!-- Location Title -->
+                    <HBox styleClass="section_title" AnchorPane.topAnchor="0" AnchorPane.rightAnchor="0">
+                        <Label text="Location" styleClass="section_title_text" />
+                        <Label text="[11]" fx:id="locationsLeft" styleClass="section_title_text" />
+                    </HBox>
+                </AnchorPane>
+                
+                <!-- Player Cards and Location -->
+                <!-- Each player's information will be dynamically added here -->
+                <ScrollPane fx:id="playerCardBdr" styleClass="playerCardBdr">
+                    <VBox fx:id="playerCardBox" styleClass="playerCard_box">
+                    </VBox>
+                </ScrollPane>
+
+            </VBox>
+
+            <!-- Gameplay Buttons Box -->
+            <GridPane styleClass="GameControl_box" >
+                <Button fx:id="addPLBtn" text="Add Player" styleClass="genButton" onAction="#openAddPlBox" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                <Button fx:id="removePLBtn" text="Remove Player" styleClass="genButton" onAction="#removePlayerFromLocation" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                <Button fx:id="startRnDBtn" text="Start Game" styleClass="genButton" onAction="#requestStartGame" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                <Button fx:id="endGameBtn" text="End Game" styleClass="genButton" onAction="#requestEndGame" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+            </GridPane>
+
+        </VBox>
+        
+        <!-- Map Section -->
+        <Pane styleClass="GameMap_bdr" AnchorPane.topAnchor="0" AnchorPane.rightAnchor="0">
+            <Pane styleClass="GameMap_box">
+                <AnchorPane fx:id="gameMapLayout" styleClass="GameMap_layout">
+                    <!-- Map locations -->
+                    <AnchorPane fx:id="rebelsRoost" styleClass="GameMap_locationBdr" AnchorPane.topAnchor="170" AnchorPane.rightAnchor="725">
+                    </AnchorPane>
+                    <AnchorPane fx:id="lavishLair" styleClass="GameMap_locationBdr" AnchorPane.topAnchor="245" AnchorPane.rightAnchor="575">
+                    </AnchorPane>
+                    <AnchorPane fx:id="classyCourts" styleClass="GameMap_locationBdr" AnchorPane.topAnchor="170" AnchorPane.rightAnchor="365">
+                    </AnchorPane>
+                    <AnchorPane fx:id="ritzyRiviera" styleClass="GameMap_locationBdr" AnchorPane.topAnchor="300" AnchorPane.rightAnchor="827">
+                    </AnchorPane>
+                    <AnchorPane fx:id="grandGlacier" styleClass="GameMap_locationBdr" AnchorPane.topAnchor="370" AnchorPane.rightAnchor="205">
+                    </AnchorPane>
+                    <AnchorPane fx:id="recklessRailways" styleClass="GameMap_locationBdr" AnchorPane.topAnchor="395" AnchorPane.rightAnchor="395">
+                    </AnchorPane>
+                    <AnchorPane fx:id="ruinedReels" styleClass="GameMap_locationBdr" AnchorPane.topAnchor="465" AnchorPane.rightAnchor="585">
+                    </AnchorPane>
+                    <AnchorPane fx:id="pleasantPiaza" styleClass="GameMap_locationBdr" AnchorPane.topAnchor="530" AnchorPane.rightAnchor="745">
+                    </AnchorPane>
+                    <AnchorPane fx:id="fencingFields" styleClass="GameMap_locationBdr" AnchorPane.topAnchor="575" AnchorPane.rightAnchor="585">
+                    </AnchorPane>
+                    <AnchorPane fx:id="hazyHillside" styleClass="GameMap_locationBdr" AnchorPane.topAnchor="605" AnchorPane.rightAnchor="385">
+                    </AnchorPane>
+                    <AnchorPane fx:id="snootySteppes" styleClass="GameMap_locationBdr" AnchorPane.topAnchor="670" AnchorPane.rightAnchor="760">
+                    </AnchorPane>
+                </AnchorPane>
+            </Pane>
+        </Pane>
+
+
+        <!-- Add player to game -->
+
+
+    </AnchorPane>
+
+</AnchorPane>
+
+
+
