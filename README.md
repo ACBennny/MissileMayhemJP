@@ -27,6 +27,8 @@ Version: 1
 
 About: Missle Mayhem is a simple 2D game that has been adapted for the streaming world. The players need to survive missiles strikes on random locations on the map. The last surviving player or popularly known as the last man standing is the winner and gets VBucks as a reward. If the player, wins and Victory Crown the prize is 1500 VBucks, if just win then it's 750 VBucks.
 
+Web version: https://github.com/ACBennny/MissileMayhem
+
 Components:
 1. Main:
 This is the main class (javafx class) of the Package.
@@ -53,7 +55,7 @@ NB:
 
 ## 
 ## Game setup
-1. You need to download all the files. It doesn't run on the web (that's a different project).
+1. You need to download all the files. It doesn't run on the web (that's a different project: https://github.com/ACBennny/MissileMayhem).
 2. Once downloaded, open the package.bluej file (Kindly note that you may need to install the blueJ IDE to run this as it's the one I used).
 3. Locate the **Main** and *right click* on it. In the context menu that appears, hit "Run JavaFX Application" (should be the first option).
 4. A small pop-up window should appear asking if you would like BlueJ to run all future method invocations in this project on the JavaFX thread to avoid threading exceptions. Select "Use JavaFX thread".
