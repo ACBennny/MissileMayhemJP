@@ -76,4 +76,4 @@ Note:
 6. To end the game, click the "End Game" button and select yes on the confirmation that appears after. "Game has Ended.." will be logged in the terminal window (solely for testing)
 7. To start a game round, click the "Start Game" and select yes on the confirmation that appears after. The game only starts after ALL players have been added to a location. "Starting Round.." will be logged in the terminal window (solely for testing)
 
-Further steps will be added as game developments progresses
+Further steps will be added as game developments progresses.
